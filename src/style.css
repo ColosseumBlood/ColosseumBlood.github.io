@@ -348,6 +348,48 @@ img {
   padding: clamp(6rem, 11vw, 10rem) var(--page-padding);
 }
 
+.section-transition {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  height: clamp(3.5rem, 6vw, 5.5rem);
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 50% -35%,
+      rgba(177, 91, 42, 0.09),
+      transparent 62%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--transition-from)) 0%,
+      rgba(var(--transition-from), 0.72) 32%,
+      rgba(var(--transition-from), 0) 100%
+    );
+}
+
+.section-transition::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(68rem, 76vw);
+  height: 1px;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 137, 61, 0.08) 16%,
+    rgba(221, 184, 98, 0.24) 50%,
+    rgba(184, 137, 61, 0.08) 84%,
+    transparent
+  );
+  box-shadow: 0 0 1.6rem rgba(168, 78, 35, 0.12);
+  transform: translateX(-50%);
+}
+
 .section-number {
   position: absolute;
   top: 5rem;
@@ -499,6 +541,7 @@ img {
 }
 
 .judgment {
+  --transition-from: 18, 10, 7;
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(20rem, 0.7fr);
   gap: clamp(3rem, 7vw, 8rem);
@@ -566,6 +609,7 @@ img {
 }
 
 .gallery {
+  --transition-from: 10, 5, 4;
   background: #120b08;
 }
 
@@ -629,6 +673,7 @@ img {
 }
 
 .downloads {
+  --transition-from: 18, 11, 8;
   padding-top: clamp(7rem, 12vw, 12rem);
   text-align: center;
   background:
