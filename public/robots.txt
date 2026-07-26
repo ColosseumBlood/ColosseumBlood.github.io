@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://romajs.github.io/ColosseumBlood-site/sitemap.xml
