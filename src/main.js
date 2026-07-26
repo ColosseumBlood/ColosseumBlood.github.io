@@ -73,8 +73,8 @@ async function loadLatestRelease() {
       link.dataset.available = "true";
     });
   } catch (error) {
-    version.textContent = "First public build coming soon";
-    date.textContent = "Follow development on GitHub";
+    version.textContent = "Public build coming soon";
+    date.textContent = "The next arena release is being forged";
     notes.href = PUBLIC_RELEASE_URL;
     checksums.href = PUBLIC_RELEASE_URL;
     console.info("Latest release is not available yet.", error);

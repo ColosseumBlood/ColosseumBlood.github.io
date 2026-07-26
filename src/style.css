@@ -124,15 +124,15 @@ img {
   text-transform: uppercase;
 }
 
-.brand-mark {
-  display: grid;
-  width: 2.25rem;
-  height: 2.25rem;
-  place-items: center;
-  color: var(--gold);
-  font-size: 0.68rem;
-  border: 1px solid var(--bronze);
-  border-radius: 50%;
+.brand-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  border: 1px solid rgba(221, 184, 98, 0.64);
+  border-radius: 28%;
+  box-shadow:
+    0 0 0 1px rgba(13, 7, 5, 0.88),
+    0 0.35rem 1rem rgba(0, 0, 0, 0.38);
 }
 
 .site-header nav {
@@ -310,11 +310,6 @@ img {
 .button-primary span,
 .button-primary svg {
   position: relative;
-}
-
-.button-ghost {
-  color: rgba(233, 223, 209, 0.72);
-  border-bottom: 1px solid rgba(221, 184, 98, 0.35);
 }
 
 .hero-status {
@@ -812,7 +807,7 @@ img {
 
 footer {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto;
   align-items: center;
   min-height: 8rem;
   padding: 2rem var(--page-padding);
@@ -821,18 +816,20 @@ footer {
   border-top: 1px solid rgba(221, 184, 98, 0.12);
 }
 
-footer p {
+.footer-credit {
   margin: 0;
-  text-align: center;
-}
-
-footer > div {
-  display: flex;
-  gap: 0.65rem;
   justify-self: end;
+  color: #9d8e82;
+  letter-spacing: 0.03em;
+  text-align: right;
 }
 
-footer a:hover {
+.footer-credit a {
+  color: #c8a85c;
+  border-bottom: 1px solid rgba(221, 184, 98, 0.3);
+}
+
+.footer-credit a:hover {
   color: var(--gold);
 }
 
@@ -1071,12 +1068,9 @@ footer a:hover {
     justify-items: start;
   }
 
-  footer p {
-    text-align: left;
-  }
-
-  footer > div {
+  .footer-credit {
     justify-self: start;
+    text-align: left;
   }
 }
 
