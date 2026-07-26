@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://romajs.github.io/ColosseumBlood-site/sitemap.xml
+Sitemap: https://colosseumblood.github.io/sitemap.xml

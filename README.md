@@ -38,6 +38,6 @@ updates the download buttons without requiring another website deployment.
 Pushes to `main` build the Vite site and deploy `dist/` through the official
 GitHub Pages Actions. The production URL is:
 
-<https://romajs.github.io/ColosseumBlood-site/>
+<https://colosseumblood.github.io/>
 
 No analytics or tracking scripts are included.
