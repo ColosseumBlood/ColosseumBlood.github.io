@@ -6,9 +6,12 @@ import "@fontsource/manrope/latin-500.css";
 import "@fontsource/manrope/latin-600.css";
 import "./style.css";
 
-const REPOSITORY_URL = "https://github.com/romajs/ColosseumBlood";
+const REPOSITORY_URL = "https://github.com/romajs/game-downloads";
+const PUBLIC_RELEASE_TAG = "colosseum-blood-latest";
+const PUBLIC_RELEASE_URL =
+  `${REPOSITORY_URL}/releases/tag/${PUBLIC_RELEASE_TAG}`;
 const RELEASE_API =
-  "https://api.github.com/repos/romajs/ColosseumBlood/releases/latest";
+  `https://api.github.com/repos/romajs/game-downloads/releases/tags/${PUBLIC_RELEASE_TAG}`;
 
 const expectedAssets = {
   macos: "ColosseumBlood-macOS-universal.zip",
@@ -46,7 +49,9 @@ async function loadLatestRelease() {
 
     const release = await response.json();
     version.textContent = `${release.name || release.tag_name} · Latest build`;
-    date.textContent = `Published ${formatDate(release.published_at)}`;
+    date.textContent = `Updated ${formatDate(
+      release.updated_at || release.published_at,
+    )}`;
     notes.href = release.html_url;
 
     const checksumAsset = release.assets.find(
@@ -70,8 +75,8 @@ async function loadLatestRelease() {
   } catch (error) {
     version.textContent = "First public build coming soon";
     date.textContent = "Follow development on GitHub";
-    notes.href = `${REPOSITORY_URL}/releases`;
-    checksums.href = `${REPOSITORY_URL}/releases`;
+    notes.href = PUBLIC_RELEASE_URL;
+    checksums.href = PUBLIC_RELEASE_URL;
     console.info("Latest release is not available yet.", error);
   }
 }

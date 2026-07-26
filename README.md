@@ -1,11 +1,13 @@
 # Colosseum Blood website
 
 Official download landing page for
-[Colosseum Blood](https://github.com/romajs/ColosseumBlood).
+[Colosseum Blood](https://colosseumblood.github.io/).
 
 The site is a static Vite application deployed to GitHub Pages. It queries the
-public GitHub Releases API at runtime, displays the latest published version,
-and connects each platform button to the matching release asset.
+public rolling release tagged `colosseum-blood-latest` in
+[`romajs/game-downloads`](https://github.com/romajs/game-downloads), displays
+the mirrored version, and connects each platform button to the matching release
+asset.
 
 ## Local development
 
@@ -30,8 +32,11 @@ The game release workflow publishes stable filenames:
 - `ColosseumBlood-Linux-x86_64.tar.gz`
 - `SHA256SUMS.txt`
 
-Because those names remain stable, publishing a new latest GitHub Release
-updates the download buttons without requiring another website deployment.
+The private source repository keeps the complete versioned release history.
+After each successful private release, its workflow replaces the assets in the
+public `colosseum-blood-latest` release. Because the tag and asset names remain
+stable, the download buttons update without requiring another website
+deployment.
 
 ## Deployment
 
