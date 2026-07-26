@@ -6,10 +6,7 @@ import "@fontsource/manrope/latin-500.css";
 import "@fontsource/manrope/latin-600.css";
 import "./style.css";
 
-const REPOSITORY_URL = "https://github.com/romajs/game-downloads";
 const PUBLIC_RELEASE_TAG = "colosseum-blood-latest";
-const PUBLIC_RELEASE_URL =
-  `${REPOSITORY_URL}/releases/tag/${PUBLIC_RELEASE_TAG}`;
 const RELEASE_API =
   `https://api.github.com/repos/romajs/game-downloads/releases/tags/${PUBLIC_RELEASE_TAG}`;
 
@@ -33,10 +30,9 @@ function formatDate(value) {
 }
 
 async function loadLatestRelease() {
+  const releaseMeta = document.querySelector(".release-meta");
   const version = document.querySelector("[data-release-version]");
   const date = document.querySelector("[data-release-date]");
-  const notes = document.querySelector("[data-release-notes]");
-  const checksums = document.querySelector("[data-checksums]");
 
   try {
     const response = await fetch(RELEASE_API, {
@@ -52,14 +48,7 @@ async function loadLatestRelease() {
     date.textContent = `Updated ${formatDate(
       release.updated_at || release.published_at,
     )}`;
-    notes.href = release.html_url;
-
-    const checksumAsset = release.assets.find(
-      (asset) => asset.name === "SHA256SUMS.txt",
-    );
-    if (checksumAsset) {
-      checksums.href = checksumAsset.browser_download_url;
-    }
+    releaseMeta.hidden = false;
 
     Object.entries(expectedAssets).forEach(([platform, filename]) => {
       const link = document.querySelector(`[data-download="${platform}"]`);
@@ -73,10 +62,7 @@ async function loadLatestRelease() {
       link.dataset.available = "true";
     });
   } catch (error) {
-    version.textContent = "Public build coming soon";
-    date.textContent = "The next arena release is being forged";
-    notes.href = PUBLIC_RELEASE_URL;
-    checksums.href = PUBLIC_RELEASE_URL;
+    releaseMeta.hidden = true;
     console.info("Latest release is not available yet.", error);
   }
 }

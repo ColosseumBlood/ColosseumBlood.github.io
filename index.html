@@ -62,12 +62,6 @@
             </a>
           </div>
         </div>
-        <div class="hero-status reveal reveal-delay-3" aria-label="Game status">
-          <span class="status-pulse" aria-hidden="true"></span>
-          <span>Playable desktop edition</span>
-          <span class="status-divider" aria-hidden="true"></span>
-          <span>Windows · Linux · macOS</span>
-        </div>
         <a class="scroll-cue" href="#game" aria-label="Explore the game">
           <span>Discover</span>
           <i aria-hidden="true"></i>
@@ -228,14 +222,14 @@
           <p class="eyebrow">Choose your platform</p>
           <h2 id="downloads-title">Enter the arena.</h2>
           <p>
-            Native desktop builds are generated from the same release source
-            and verified with published SHA-256 checksums.
+            Native desktop builds for macOS, Windows, and Linux, ready to
+            download.
           </p>
         </div>
 
         <div class="release-meta reveal" role="status" aria-live="polite">
           <span class="status-pulse" aria-hidden="true"></span>
-          <strong data-release-version>Checking the latest release…</strong>
+          <strong data-release-version>Latest desktop release</strong>
           <span data-release-date></span>
         </div>
 
@@ -253,13 +247,18 @@
               <h3>macOS</h3>
               <p class="platform-detail">Apple Silicon + Intel · ZIP</p>
             </div>
+            <p class="platform-note">
+              This build is not notarized yet. First launch may require
+              approval in Privacy &amp; Security.
+            </p>
             <a
               class="download-link"
-              href="https://github.com/romajs/game-downloads/releases/tag/colosseum-blood-latest"
+              href="https://github.com/romajs/game-downloads/releases/download/colosseum-blood-latest/ColosseumBlood-macOS-universal.zip"
               data-download="macos"
+              data-available="true"
             >
               <span>Download</span>
-              <small data-download-size>Release pending</small>
+              <small data-download-size>96.5 MB</small>
             </a>
           </article>
 
@@ -276,11 +275,12 @@
             </div>
             <a
               class="download-link"
-              href="https://github.com/romajs/game-downloads/releases/tag/colosseum-blood-latest"
+              href="https://github.com/romajs/game-downloads/releases/download/colosseum-blood-latest/ColosseumBlood-Windows-x86_64.zip"
               data-download="windows"
+              data-available="true"
             >
               <span>Download</span>
-              <small data-download-size>Release pending</small>
+              <small data-download-size>63.7 MB</small>
             </a>
           </article>
 
@@ -299,32 +299,14 @@
             </div>
             <a
               class="download-link"
-              href="https://github.com/romajs/game-downloads/releases/tag/colosseum-blood-latest"
+              href="https://github.com/romajs/game-downloads/releases/download/colosseum-blood-latest/ColosseumBlood-Linux-x86_64.tar.gz"
               data-download="linux"
+              data-available="true"
             >
               <span>Download</span>
-              <small data-download-size>Release pending</small>
+              <small data-download-size>55.1 MB</small>
             </a>
           </article>
-        </div>
-
-        <div class="download-footnote reveal">
-          <p>
-            macOS builds are not notarized yet. First launch may require
-            approval in Privacy &amp; Security.
-          </p>
-          <a
-            href="https://github.com/romajs/game-downloads/releases/download/colosseum-blood-latest/SHA256SUMS.txt"
-            data-checksums
-          >
-            Verify checksums
-          </a>
-          <a
-            href="https://github.com/romajs/game-downloads/releases/tag/colosseum-blood-latest"
-            data-release-notes
-          >
-            Release notes
-          </a>
         </div>
       </section>
     </main>
